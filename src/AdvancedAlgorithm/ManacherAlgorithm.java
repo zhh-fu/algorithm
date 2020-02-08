@@ -19,6 +19,7 @@ public class ManacherAlgorithm {
         }
         char[] charArr = manacherString(str);
         int[] pArr = new int[charArr.length];
+        //index 为回文中心
         int index = -1;
         int pR = -1;
         int max = Integer.MIN_VALUE;
