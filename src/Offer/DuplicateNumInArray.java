@@ -10,6 +10,7 @@ import java.util.HashSet;
 
 解题思路1：利用Hash，set或者map均可。
 解题思路2：占位。因为数组中的数在0-n-1之间，如果相应位置被占，即证明存在重复数。
+解题思路3：原地置换法
 */
 public class DuplicateNumInArray {
     /**
@@ -21,7 +22,7 @@ public class DuplicateNumInArray {
      *         otherwise false
      */
     //hash法
-    public static boolean duplicate1(int numbers[], int length, int [] duplication) {
+    private static boolean duplicate1(int numbers[], int length, int [] duplication) {
         if(numbers == null || length < 2){
             return false;
         }
@@ -41,7 +42,7 @@ public class DuplicateNumInArray {
     }
 
     //占位法
-    public static boolean duplicate2(int numbers[],int length,int [] duplication) {
+    private static boolean duplicate2(int numbers[],int length,int [] duplication) {
         if(numbers == null || length < 2){
             return false;
         }

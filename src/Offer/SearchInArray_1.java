@@ -9,8 +9,8 @@ package Offer;
 
  解题思路：从右上角或者左下角开始遍历即可。复杂度为O(M+N)。M、N为行列数。
  */
-public class SearchInArray {
-    public boolean Find(int target, int [][] array) {
+public class SearchInArray_1 {
+    private boolean Find(int target, int [][] array) {
         if (array == null || array.length < 1){
             return false;
         }
