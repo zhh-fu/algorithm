@@ -1,10 +1,10 @@
 package BasicConstructure;
 
-public class LinkNode {
+public class ListNode {
     public int value;
-    public LinkNode next;
+    public ListNode next;
 
-    public LinkNode(int value) {
+    public ListNode(int value) {
         this.value = value;
     }
 }

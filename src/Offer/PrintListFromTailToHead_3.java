@@ -1,7 +1,6 @@
 package Offer;
 
-import BasicConstructure.LinkNode;
-import sun.awt.image.ImageWatched;
+import BasicConstructure.ListNode;
 
 import java.util.ArrayList;
 import java.util.Stack;
@@ -15,9 +14,9 @@ import java.util.Stack;
  */
 public class PrintListFromTailToHead_3 {
     //栈
-    public ArrayList<Integer> printListFromTailToHead(LinkNode listNode) {
+    public ArrayList<Integer> printListFromTailToHead(ListNode listNode) {
         Stack<Integer> stack = new Stack<>();
-        LinkNode head = listNode;
+        ListNode head = listNode;
         while (head != null){
             stack.push(head.value);
             head = head.next;
@@ -30,11 +29,11 @@ public class PrintListFromTailToHead_3 {
     }
 
     //反转链表
-    public ArrayList<Integer> printListFromTailToHead1(LinkNode listNode) {
-        LinkNode cur = listNode;
-        LinkNode pre = null;
+    public ArrayList<Integer> printListFromTailToHead1(ListNode listNode) {
+        ListNode cur = listNode;
+        ListNode pre = null;
         while (cur != null){
-            LinkNode next = cur.next;
+            ListNode next = cur.next;
             cur.next = pre;
             pre = cur;
             cur = next;
@@ -48,7 +47,7 @@ public class PrintListFromTailToHead_3 {
     }
 
     private ArrayList<Integer> list = new ArrayList<>();
-    private ArrayList<Integer> printListFromTailToHead2(LinkNode listNode) {
+    private ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
         if (listNode != null){
             printListFromTailToHead2(listNode.next);
             list.add(listNode.value);

@@ -1,17 +1,17 @@
 package AdvancedAlgorithm;
 
-import BasicConstructure.LinkNode;
+import BasicConstructure.ListNode;
 
 /**
  * 约瑟夫环形链表问题
  */
 public class JosephusProlem {
-    public static LinkNode josephusProlem2(LinkNode head, int m){
+    public static ListNode josephusProlem2(ListNode head, int m){
         if (head == null || head.next == head || m < 1) {
             return head;
         }
 
-        LinkNode cur = head.next;
+        ListNode cur = head.next;
         int tmp = 1; // tmp -> list size
         while (cur != head) {
             tmp++;
@@ -37,11 +37,11 @@ public class JosephusProlem {
         return (getLive(i - 1, m) + m - 1) % i + 1;
     }
 
-    public static LinkNode josephusProblem1(LinkNode head, int m) {
+    public static ListNode josephusProblem1(ListNode head, int m) {
         if (head == null || head.next == head || m < 1) {
             return head;
         }
-        LinkNode last = head;
+        ListNode last = head;
         //找到最尾的节点
         while (last.next != head) {
             last = last.next;
