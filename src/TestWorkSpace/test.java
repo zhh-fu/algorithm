@@ -1,14 +1,18 @@
 package TestWorkSpace;
 
+import BasicConstructure.TreeNode;
+
 import java.util.Arrays;
 
 public class test {
     public static void main(String[] args){
-        int[] arr = {2,5,3,7,5,1,9,4};
-        insertSort(arr);
-        for (int i:arr) {
-            System.out.println(i);
-        }
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.left = new TreeNode(6);
+        System.out.println(serializedInOrder(root));
     }
 
     private static void insertSort(int[] arr){
@@ -25,6 +29,17 @@ public class test {
             }
         }
         //return arr;
+    }
+    static String str = null;
+    private static String serializedInOrder(TreeNode root){
+        if(root == null){
+            return "#_";
+        }
+
+        str += serializedInOrder(root.left);
+        str = root.value + "_";
+        str += serializedInOrder(root.right);
+        return str;
     }
 
     private static void swap(int[] arr,int i,int j){
