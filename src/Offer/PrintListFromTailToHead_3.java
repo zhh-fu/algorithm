@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Stack;
 
 /**
- * 从尾到头答应数组；
+ * 从尾到头打印数组；
  * 输入一个链表，按链表从尾到头的顺序返回一个ArrayList。
  * 思路1：使用栈，时间空间复杂度均为O(N)。
  * 思路2：递归，找到最后一个然后输出即可；
