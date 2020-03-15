@@ -10,7 +10,7 @@ package Offer;
 
 import BasicConstructure.ListNode;
 
-public class FindFirstCommonNode_35 {
+public class FindFirstCommonNode_36 {
     public ListNode findFirstCommonNode_1(ListNode pHead1, ListNode pHead2) {
         if(pHead1 == null || pHead2 == null) return null;
         ListNode p1 = isCircleNode(pHead1);
