@@ -15,18 +15,19 @@ public class test {
 //        root.right.left = new TreeNode(6);
 //        System.out.println(serializedInOrder(root));
     //    System.out.println(12%10);
-//        ArrayList<Integer> list = new ArrayList<>();
-//        list.add(1);
-//        list.add(2);
-//        list.add(3);
-//        list.add(4);
-//        list.add(5);
-//        list.add(6);
-//        list.add(7);
-//        while (list.size() > 3){
-//            System.out.println(list.remove(2));
-//        }
-        System.out.println((int)'z' - 65);
+        ArrayList<Integer> list = new ArrayList<>();
+        list.add(0,1);
+        list.add(1,2);
+        list.add(1,3);
+        list.add(2,4);
+        list.add(2,5);
+        list.add(6);
+        list.add(7);
+        int a = 6;
+        for (int i=0;i<=list.size() - 1;i++){
+            System.out.println(list.get(i));
+        }
+        //System.out.println((int)'z' - 65);
 
     }
 
