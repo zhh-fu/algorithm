@@ -12,7 +12,7 @@ import java.util.HashSet;
 解题思路2：占位。因为数组中的数在0-n-1之间，如果相应位置被占，即证明存在重复数。
 解题思路3：原地置换法
 */
-public class DuplicateNumInArray {
+public class DuplicateNumInArray_50 {
     /**
      *
      * @param numbers an array of integers
@@ -60,10 +60,34 @@ public class DuplicateNumInArray {
         return false;
     }
 
+    //法三：原地置换法
+    public static boolean duplicate_3(int numbers[],int length,int [] duplication) {
+        if(numbers == null || length < 2){
+            return false;
+        }
+        for(int i=0;i<numbers.length;i++){
+            //记录并确定原始的值
+            int index = numbers[i];
+            if(index >= length){
+                index -= length;
+            }
+            //第二次访问，直接返回
+            if(numbers[index] > length){
+                //注意返回的是原始的值
+                duplication[0] = index;
+                return true;
+            }
+            //第一次访问则在对应的位置上加上length
+            numbers[index] += length;
+        }
+        return false;
+    }
+
     public static void main(String[] args){
         int[] num = {2,1,3,1,4};
         int[] duplication = new int[1];
-        System.out.println(DuplicateNumInArray.duplicate1(num,5,duplication));
-        System.out.println(DuplicateNumInArray.duplicate2(num,5,duplication));
+        //System.out.println(DuplicateNumInArray_50.duplicate1(num,5,duplication));
+        //System.out.println(DuplicateNumInArray_50.duplicate2(num,5,duplication));
+        System.out.println(duplicate_3(num,5,duplication));
     }
 }
