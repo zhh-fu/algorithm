@@ -19,7 +19,7 @@ public class MergeList_16 {
         ListNode res = null;
 
         //先确定头结点
-        if(p1.value >= p2.value){
+        if(p1.val >= p2.val){
             res = p2;
             p2 = p2.next;
         } else{
@@ -31,7 +31,7 @@ public class MergeList_16 {
 
 
         while(p1 != null && p2 != null){
-            if(p1.value >= p2.value){
+            if(p1.val >= p2.val){
                 res.next = p2;
                 p2 = p2.next;
             } else{
@@ -60,7 +60,7 @@ public class MergeList_16 {
 
         //如果list1的值小于list2的值，
         //那么list1作为头，它的下一个节点就是list1剩余的节点和list2合并的头结点
-        if(list1.value <= list2.value){
+        if(list1.val <= list2.val){
             list1.next = merge_2(list1.next, list2);
             return list1;
         } else{
@@ -79,6 +79,6 @@ public class MergeList_16 {
         ListNode list2 = new ListNode(2);
         list2.next = new ListNode(4);
         list2.next.next = new ListNode(6);
-        System.out.println(merge_1(list1,list2).value);
+        System.out.println(merge_1(list1,list2).val);
     }
 }

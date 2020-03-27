@@ -18,7 +18,7 @@ public class PrintListFromTailToHead_3 {
         Stack<Integer> stack = new Stack<>();
         ListNode head = listNode;
         while (head != null){
-            stack.push(head.value);
+            stack.push(head.val);
             head = head.next;
         }
         ArrayList<Integer> list = new ArrayList<>();
@@ -40,7 +40,7 @@ public class PrintListFromTailToHead_3 {
         }
         ArrayList<Integer> list = new ArrayList<>();
         while (pre != null){
-            list.add(pre.value);
+            list.add(pre.val);
             pre = pre.next;
         }
         return list;
@@ -50,7 +50,7 @@ public class PrintListFromTailToHead_3 {
     private ArrayList<Integer> printListFromTailToHead2(ListNode listNode) {
         if (listNode != null){
             printListFromTailToHead2(listNode.next);
-            list.add(listNode.value);
+            list.add(listNode.val);
         }
         return list;
     }
