@@ -26,8 +26,8 @@ public class FindPath_24 {
     private void helper(TreeNode root,int target,ArrayList<Integer> listSub,ArrayList<ArrayList<Integer>> list){
         if (root == null) return;
         //使target不断减小的同时将节点值放入list中
-        target -= root.value;
-        listSub.add(root.value);
+        target -= root.val;
+        listSub.add(root.val);
         //和为target且为叶节点时加入到总的list中
         if (target == 0 && root.left ==null && root.right == null){
             //此处需要重新new一个，否则list中的所有元素都指向了同一个listSub

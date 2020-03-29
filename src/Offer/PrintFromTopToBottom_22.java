@@ -20,7 +20,7 @@ public class PrintFromTopToBottom_22 {
         q.add(root);
         while(!q.isEmpty()){
             TreeNode head = q.poll();
-            list.add(head.value);
+            list.add(head.val);
             if(head.left != null){
                 q.add(head.left);
             }

@@ -75,7 +75,7 @@ public class HasSubtree_17 {
         if (root1 == null) return false;
 
         //两者当前的头结点不相同，不匹配
-        if (root1.value != root2.value){
+        if (root1.val != root2.val){
             return false;
         }
 
@@ -110,7 +110,7 @@ public class HasSubtree_17 {
         }
         //注意分隔符的位置，如果“_”放在后面会影响判断
         //如12_和2_无法分辨，但是_12和_2则可以分清
-        String str = "_" + root.value;
+        String str = "_" + root.val;
 
         str += process(root.left);
         str += process(root.right);
@@ -142,7 +142,7 @@ public class HasSubtree_17 {
         if (root1 == null || root2 == null) return false;
 
         //当前节点相同，再分别判断左右子树
-        if (root1.value == root2.value){
+        if (root1.val == root2.val){
             return doesHasThisTree(root1.left, root2.left) &&
                     doesHasThisTree(root1.right, root2.right);
         }

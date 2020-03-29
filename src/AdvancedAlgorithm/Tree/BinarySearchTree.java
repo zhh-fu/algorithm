@@ -1,8 +1,6 @@
 package AdvancedAlgorithm.Tree;
 
 import BasicConstructure.TreeNode;
-import BasicConstructure.Node;
-import sun.reflect.generics.tree.Tree;
 
 /**
  * 搜索二叉树的查找，添加，删除
@@ -14,8 +12,8 @@ public class BinarySearchTree {
     public TreeNode search(int element){
         TreeNode head = root;
         //此情况假设所有的节点均被复制
-        while (head != null && head.value != element ){
-            if (head.value > element){
+        while (head != null && head.val != element ){
+            if (head.val > element){
                 head = head.left;
             }
             else {
@@ -38,7 +36,7 @@ public class BinarySearchTree {
         TreeNode insertParentNode = null;
         while (node != null){
             insertParentNode = node;
-            if (node.value > element){
+            if (node.val > element){
                 node = node.left;
             }
             else {
@@ -48,7 +46,7 @@ public class BinarySearchTree {
 
         //记录并插入节点
         TreeNode newNode = new TreeNode(element);
-        if (insertParentNode.value > element){
+        if (insertParentNode.val > element){
             insertParentNode.left = newNode;
         }
         else {

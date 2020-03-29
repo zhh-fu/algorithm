@@ -2,8 +2,8 @@ package TestWorkSpace;
 
 import BasicConstructure.TreeNode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class test {
     public static void main(String[] args){
@@ -28,7 +28,24 @@ public class test {
 //            System.out.println(list.get(i));
 //        }
         //System.out.println((int)'z' - 65);
-        System.out.println(120^2*1);
+        Queue<TreeNode> q = new LinkedList<>();
+        q.add(new TreeNode(1));
+        q.add(new TreeNode(2));
+        q.add(new TreeNode(3));
+        q.add(null);
+        q.add(null);
+        q.add(new TreeNode(4));
+        /*
+        for (TreeNode node : q){
+            if (node == null){
+                System.out.println(" ");
+            }else {
+                System.out.println(node.val);
+            }
+        }
+        */
+        System.out.println(q.size());
+        //System.out.println(120^2*1);
 
     }
 
@@ -54,7 +71,7 @@ public class test {
         }
 
         str += serializedInOrder(root.left);
-        str = root.value + "_";
+        str = root.val + "_";
         str += serializedInOrder(root.right);
         return str;
     }
