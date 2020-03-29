@@ -46,7 +46,6 @@ public class test {
         */
         System.out.println(q.size());
         //System.out.println(120^2*1);
-
     }
 
     private static void insertSort(int[] arr){
