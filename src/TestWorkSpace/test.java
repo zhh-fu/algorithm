@@ -28,6 +28,7 @@ public class test {
 //            System.out.println(list.get(i));
 //        }
         //System.out.println((int)'z' - 65);
+        /*
         Queue<TreeNode> q = new LinkedList<>();
         q.add(new TreeNode(1));
         q.add(new TreeNode(2));
@@ -35,7 +36,7 @@ public class test {
         q.add(null);
         q.add(null);
         q.add(new TreeNode(4));
-        /*
+
         for (TreeNode node : q){
             if (node == null){
                 System.out.println(" ");
@@ -44,7 +45,9 @@ public class test {
             }
         }
         */
-        System.out.println(q.size());
+        int[] arr = new int[3];
+        help(arr);
+        System.out.println(arr[1]);
         //System.out.println(120^2*1);
     }
 
@@ -79,5 +82,9 @@ public class test {
         int tmp = arr[i];
         arr[i] = arr[j];
         arr[j] = tmp;
+    }
+
+     static void help(int[] arr){
+        arr[1] = 5;
     }
 }
