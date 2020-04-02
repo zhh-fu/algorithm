@@ -49,6 +49,8 @@ public class test {
         help(arr);
         System.out.println(arr[1]);
         //System.out.println(120^2*1);
+        TestInstance instance = TestInstance.getInstance();
+        instance.hello();
     }
 
     private static void insertSort(int[] arr){
