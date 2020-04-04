@@ -51,6 +51,7 @@ public class test {
         //System.out.println(120^2*1);
         TestInstance instance = TestInstance.getInstance();
         instance.hello();
+        System.out.println('1' - 0);
     }
 
     private static void insertSort(int[] arr){
