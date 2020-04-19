@@ -42,9 +42,17 @@ public class test {
     public static void main(String[] args) {
         int[] A = {1,2,3,0,0,0};
         int[] B = {2,5,6};
-        merge(A,3,B,3);
-        for (int i:A){
-            System.out.println(i);
-        }
+        System.out.println(str("aaa"));
+    }
+
+    public static int str(String str){
+       int num = 0;
+       for (int i=0;i<str.length();i++){
+           for (int j=i+1;j<str.length();j++){
+               String s = str.substring(i,j);
+               num++;
+           }
+       }
+       return num;
     }
 }
