@@ -15,7 +15,7 @@ public class LetterCombinations {
         for (int i=0;i<digits.length();i++){
             strs[i] = getChar(chs[i]) ;
         }
-
+        return  null;
     }
 
     private String getChar(char num){
