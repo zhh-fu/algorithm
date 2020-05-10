@@ -22,9 +22,9 @@ public class HasPath_65 {
         //判断任意开始位置
         for (int i=0;i<rows;i++){
             for (int j=0;j<cols;j++){
-                if (helper(i,j,0,arr,matrix,rows,cols,str)) return true;
-                //arr被修改了，需要复位
-                arr = new boolean[matrix.length];
+                if (str[0] == matrix[i*cols + j]){
+                    if (helper(i,j,0,arr,matrix,rows,cols,str)) return true;
+                }
             }
         }
         return false;
@@ -43,15 +43,21 @@ public class HasPath_65 {
         arr[curRow*cols + curCol] = true;
 
         //只要有一个为真即可
-        return helper(curRow + 1, curCol, index + 1, arr, matrix, rows, cols, str) ||
+        //不能直接返回，因为标记数组需要复位
+        //如果没有复位操作可能导致最终误判
+        //因为所使用的是标记数组的引用，导致在递归返回时，实际上没有走过的路被认为走过
+        boolean res = helper(curRow + 1, curCol, index + 1, arr, matrix, rows, cols, str) ||
                helper(curRow - 1, curCol, index + 1, arr, matrix, rows, cols, str) ||
                helper(curRow, curCol + 1, index + 1, arr, matrix, rows, cols, str) ||
                helper(curRow, curCol - 1, index + 1, arr, matrix, rows, cols, str);
+        //执行此处会使标记数组复位
+        arr[curRow*cols + curCol] = false;
+        return res;
     }
 
     public static void main(String[] args) {
-        char[] maxtrix = {'a','b','c','e','s','f','c','s','a','d','e','e'};
-        char[] str = {'a','b','c','d'};
+        char[] maxtrix = {'A','B','C','E','S','F','E','S','A','D','E','E'};
+        char[] str = {'A','B','C','E','S','E','E','E','F','S'};
         System.out.println(new HasPath_65().hasPath(maxtrix,3,4,str));
     }
 }

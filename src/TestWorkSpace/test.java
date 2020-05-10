@@ -40,9 +40,8 @@ public class test {
     }
 
     public static void main(String[] args) {
-        int[] A = {1,2,3,0,0,0};
-        int[] B = {2,5,6};
-        System.out.println(str("aaa"));
+        boolean[] a = new boolean[2];
+        System.out.println(a[1]);
     }
 
     public static int str(String str){
