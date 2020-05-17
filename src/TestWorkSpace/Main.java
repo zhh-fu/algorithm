@@ -7,19 +7,65 @@ public class Main {
         Scanner in = new Scanner(System.in);
         while (in.hasNext()) {
             int n = in.nextInt();
-            int m = in.nextInt();
-            int[] wazi = new int[n];
-            int[][] plan = new int[m][2];
+            ArrayList<ArrayList<Integer>> list = new ArrayList<>();
             for (int i=0;i<n;i++){
-                wazi[i] = in.nextInt();
+                int m = in.nextInt();
+                ArrayList<Integer> subList = new ArrayList<>();
+                subList.add(m);
+                for (int j=0;j<m;j++){
+                    subList.add(in.nextInt());
+                    subList.add(in.nextInt());
+                }
+                list.add(subList);
             }
-            for (int j=0;j<m;j++){
-                plan[j][0] = in.nextInt();
-                plan[j][1] = in.nextInt();
+            int q = in.nextInt();
+            int[] qi = new int[q];
+            for (int i=0;i<q;i++){
+                qi[i] = in.nextInt();
             }
+            int[] res = new int[q];
+
+            for (int i=0;i<qi.length;i++){
+                int max = Integer.MIN_VALUE;
+                int time = qi[i];
+                for (int j=0;j<list.size();j++){
+                    int length = 0;
+                    int m = list.get(j).get(0);
+                    int[] datas = new int[2*m];
+                    for (int l =0;l<datas.length;l++){
+                        datas[l] = list.get(j).get(l+1);
+                    }
+                }
+
+            }
+
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
@@ -134,28 +180,6 @@ public class Main {
         }
     }
     */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 class Example{
