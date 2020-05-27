@@ -23,7 +23,7 @@ import java.util.*;
 public class TopKFrequent {
     public int[] topKFrequent(int[] nums, int k) {
         // 使用字典，统计每个元素出现的次数，元素为键，元素出现的次数为值
-        HashMap<Integer,Integer> map = new HashMap();
+        HashMap<Integer,Integer> map = new HashMap<>();
         for(int num : nums){
             if (map.containsKey(num)) {
                 map.put(num, map.get(num) + 1);
