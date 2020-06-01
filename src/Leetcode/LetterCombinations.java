@@ -1,5 +1,6 @@
 package Leetcode;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -10,12 +11,41 @@ import java.util.List;
  */
 public class LetterCombinations {
     public List<String> letterCombinations(String digits) {
+        List<StringBuffer> list = new ArrayList<>();
+        List<String> res = new ArrayList<>();
+        if (digits == null || digits.trim().equals("")) return res;
+        int index = 0;
         char[] chs = digits.toCharArray();
-        String[] strs = new String[chs.length];
-        for (int i=0;i<digits.length();i++){
-            strs[i] = getChar(chs[i]) ;
+        while (index < chs.length && chs[index] == '1'){
+            index++;
         }
-        return  null;
+        if (index == chs.length) return  res;
+        String str = getChar(chs[index]);
+        for (int i=0;i<str.length();i++){
+            StringBuffer sb = new StringBuffer();
+            sb.append(str.charAt(i));
+            list.add(sb);
+        }
+
+        for (int i=index+1;i<chs.length;i++){
+            if (chs[i] == '1') continue;
+            String s = getChar(chs[i]);
+            List<StringBuffer> subList = new ArrayList<>();
+
+            for (StringBuffer sb : list){
+                for (int j=0;j<s.length();j++) {
+                    StringBuffer sb1 = new StringBuffer(sb);
+                    sb1.append(s.charAt(j));
+                    subList.add(sb1);
+                }
+            }
+            list = new ArrayList<>(subList);
+        }
+
+        for (StringBuffer sb : list){
+            res.add(sb.toString());
+        }
+        return  res;
     }
 
     private String getChar(char num){
@@ -30,5 +60,11 @@ public class LetterCombinations {
             case '9': return "wxyz";
         }
         return null;
+    }
+
+    public static void main(String[] args) {
+        List<String> list = new LetterCombinations().letterCombinations("");
+        System.out.println(list.size());
+        System.out.println(list);
     }
 }
