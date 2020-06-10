@@ -5,42 +5,36 @@ public class MyAtoi {
         if(str == null || str.trim().equals("")) return 0;
         str = str.trim();
         boolean flag = true;
-        long num = 0;
+        int num = 0;
         if ((str.charAt(0) < '0' || str.charAt(0) > '9') && (str.charAt(0) != '+' && str.charAt(0) != '-')){
             return 0;
         }
 
-        char[] chs = str.toCharArray();
-        for (int i=0;i<chs.length;i++){
+        for (int i=0;i<str.length();i++){
             if (i == 0){
-                if (chs[i] == '-'){
+                if (str.charAt(i) == '-'){
                     flag = false;
-                } else if (chs[i] == '+'){
+                } else if (str.charAt(i) == '+'){
                     continue;
                 } else{
-                    num = num * 10 + chs[i] - '0';
+                    num = num * 10 + str.charAt(i) - '0';
                 }
                 continue;
             }
             if (str.charAt(i) < '0' || str.charAt(i) > '9'){
                 break;
             } else {
-                num = num * 10 + chs[i] - '0';
-            }
-            if (num >= 0 - Integer.MIN_VALUE){
-                num = Integer.MIN_VALUE;
+                if (num > (Integer.MAX_VALUE - (str.charAt(i) - '0')) / 10){
+                    return flag ? Integer.MAX_VALUE : Integer.MIN_VALUE;
+                }
+                num = num * 10 + str.charAt(i) - '0';
             }
         }
 
-        if (flag){
-            num = 0 - num;
-        }
-
-        if (num > Integer.MAX_VALUE) return Integer.MAX_VALUE;
-        return (int) num;
+        return flag ? num : -num;
     }
 
     public static void main(String[] args) {
-        System.out.println(myAtoi("  0000000000012345678"));
+        System.out.println(myAtoi("  -  000456123"));
     }
 }
