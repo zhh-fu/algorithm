@@ -4,42 +4,8 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        while (in.hasNext()) {
-            int n = in.nextInt();
-            ArrayList<ArrayList<Integer>> list = new ArrayList<>();
-            for (int i=0;i<n;i++){
-                int m = in.nextInt();
-                ArrayList<Integer> subList = new ArrayList<>();
-                subList.add(m);
-                for (int j=0;j<m;j++){
-                    subList.add(in.nextInt());
-                    subList.add(in.nextInt());
-                }
-                list.add(subList);
-            }
-            int q = in.nextInt();
-            int[] qi = new int[q];
-            for (int i=0;i<q;i++){
-                qi[i] = in.nextInt();
-            }
-            int[] res = new int[q];
-
-            for (int i=0;i<qi.length;i++){
-                int max = Integer.MIN_VALUE;
-                int time = qi[i];
-                for (int j=0;j<list.size();j++){
-                    int length = 0;
-                    int m = list.get(j).get(0);
-                    int[] datas = new int[2*m];
-                    for (int l =0;l<datas.length;l++){
-                        datas[l] = list.get(j).get(l+1);
-                    }
-                }
-
-            }
-
-        }
+        char[][] chars = new char[3][2];
+        System.out.println(chars[1][1] == 0);
     }
 }
 
