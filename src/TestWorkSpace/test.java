@@ -41,17 +41,12 @@ public class test {
 
     public static void main(String[] args) {
         boolean[] a = new boolean[2];
+        char ch = 'a';
+
         System.out.println(a[1]);
+        String s = "aSa123d";
+        s = s.toLowerCase();
+        System.out.println(s);
     }
 
-    public static int str(String str){
-       int num = 0;
-       for (int i=0;i<str.length();i++){
-           for (int j=i+1;j<str.length();j++){
-               String s = str.substring(i,j);
-               num++;
-           }
-       }
-       return num;
-    }
 }
